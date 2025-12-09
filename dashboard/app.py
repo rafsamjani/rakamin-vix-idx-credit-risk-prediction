@@ -68,38 +68,67 @@ st.markdown("""
 def load_model():
     """Load the trained credit risk model"""
     try:
-        model_path = "models/credit_risk_model_best.pkl"
-        if os.path.exists(model_path):
-            model_data = joblib.load(model_path)
-            return model_data
-        else:
-            st.error("Model file not found. Please ensure the model has been trained.")
+        # Try multiple possible model paths
+        model_paths = [
+            "models/credit_risk_model_best.pkl",
+            "../models/credit_risk_model_best.pkl",
+            "credit_risk_model_best.pkl"
+        ]
+
+        model_data = None
+        for model_path in model_paths:
+            if os.path.exists(model_path):
+                model_data = joblib.load(model_path)
+                break
+
+        if model_data is None:
+            st.error("❌ Model file not found. Please train the model first.")
+            st.info("💡 Run: python train_simple_model.py to train the model")
             return None
+        else:
+            st.success("✅ Model loaded successfully!")
+            return model_data
     except Exception as e:
-        st.error(f"Error loading model: {str(e)}")
+        st.error(f"❌ Error loading model: {str(e)}")
         return None
 
 @st.cache_data
 def load_sample_data():
     """Load sample loan data for demonstration"""
     try:
-        # Try to load cleaned data first
+        # Try to load processed data first
         data_paths = [
             "data/processed/loan_data_cleaned.csv",
             "../data/processed/loan_data_cleaned.csv",
-            "../../data/processed/loan_data_cleaned.csv"
+            "../../data/processed/loan_data_cleaned.csv",
+            "Data/processed/loan_data_cleaned.csv"
         ]
 
         for path in data_paths:
             if os.path.exists(path):
-                df = pd.read_csv(path, nrows=10000)  # Load sample for performance
+                df = pd.read_csv(path, nrows=5000)  # Load sample for performance
+                st.success(f"✅ Loaded data from: {path}")
+                return df
+
+        # If no processed data found, try raw data
+        raw_data_paths = [
+            "data/raw/loan_data_2007_2014.csv",
+            "../data/raw/loan_data_2007_2014.csv",
+            "../../data/raw/loan_data_2007_2014.csv",
+            "Data/loan_data_2007_2014.csv"
+        ]
+
+        for path in raw_data_paths:
+            if os.path.exists(path):
+                df = pd.read_csv(path, nrows=5000)  # Load sample for performance
+                st.success(f"✅ Loaded raw data from: {path}")
                 return df
 
         # If no data found, create sample data
-        st.warning("No data file found. Using sample data for demonstration.")
+        st.warning("⚠️ No data file found. Using sample data for demonstration.")
         return create_sample_data()
     except Exception as e:
-        st.error(f"Error loading data: {str(e)}")
+        st.error(f"❌ Error loading data: {str(e)}")
         return create_sample_data()
 
 def create_sample_data():
@@ -414,16 +443,25 @@ def portfolio_analysis_page(sample_data):
             st.metric("Total Applications", f"{total_loans:,}")
 
         with col2:
-            default_rate = sample_data['loan_status_binary'].mean() * 100
-            st.metric("Default Rate", f"{default_rate:.1f}%")
+            if 'loan_status_binary' in sample_data.columns:
+                default_rate = sample_data['loan_status_binary'].mean() * 100
+                st.metric("Default Rate", f"{default_rate:.1f}%")
+            else:
+                st.metric("Default Rate", "N/A")
 
         with col3:
-            avg_loan_amount = sample_data['loan_amnt'].mean()
-            st.metric("Avg Loan Amount", f"${avg_loan_amount:,.0f}")
+            if 'loan_amnt' in sample_data.columns:
+                avg_loan_amount = sample_data['loan_amnt'].mean()
+                st.metric("Avg Loan Amount", f"${avg_loan_amount:,.0f}")
+            else:
+                st.metric("Avg Loan Amount", "N/A")
 
         with col4:
-            avg_fico = sample_data['fico_avg'].mean() if 'fico_avg' in sample_data.columns else 700
-            st.metric("Avg FICO Score", f"{avg_fico:.0f}")
+            if 'fico_avg' in sample_data.columns:
+                avg_fico = sample_data['fico_avg'].mean()
+                st.metric("Avg FICO Score", f"{avg_fico:.0f}")
+            else:
+                st.metric("Avg FICO Score", "N/A")
 
         # Risk Distribution
         st.subheader("🎯 Risk Distribution")
