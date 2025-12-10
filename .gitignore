@@ -1,12 +1,6 @@
-# Data files
-Data/*.csv
-Data/*.xlsx
-Data/*.xls
-data/*.csv
-data/*.xlsx
-data/*.xls
-Data/raw/loan_data_2007_2014.csv
-Data/processed/
+# Data files (excluding the actual data files to reduce repository size)
+Data/
+data/
 
 # Models and pickled objects
 models/*.pkl
