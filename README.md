@@ -1,328 +1,146 @@
-# Credit Risk Prediction System
+# Credit Risk Prediction - End-to-End Data Science Project
 
-![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)
-![Machine Learning](https://img.shields.io/badge/ML-XGBoost-green.svg)
-![Dashboard](https://img.shields.io/badge/Dashboard-Streamlit-orange.svg)
-![License](https://img.shields.io/badge/License-MIT-yellow.svg)
+This project demonstrates a complete data science pipeline for credit risk prediction, following the CRISP-DM methodology from business understanding to model deployment.
 
-**Intelligent Credit Risk Assessment System for ID/X Partners**
+## Project Overview
 
-## 📋 Project Overview
+The goal of this project is to develop machine learning models to predict loan defaults (churn) for lending institutions. The system uses historical lending data to assess credit risk and help financial institutions make informed lending decisions.
 
-This comprehensive credit risk prediction system was developed as the final project for the Rakamin Virtual Internship Experience (VIX) Program in partnership with ID/X Partners. The system uses machine learning to predict loan default probability, helping lenders make informed decisions while minimizing financial losses.
-
-## 🎯 Business Problem
-
-**Client**: ID/X Partners (Lending Company)
-**Challenge**: How to accurately determine if a borrower will repay their loan or default?
-**Impact**: Poor credit decisions can lead to significant financial losses
-**Dataset**: Lending Club loan data (2007-2014) with borrower information and outcomes
-
-## 🚀 Key Features
-
-### 🔍 Individual Risk Assessment
-- Real-time credit risk evaluation for loan applications
-- Comprehensive borrower profile analysis
-- Risk score calculation (0-100%)
-- Automated approval/rejection recommendations
-
-### 📈 Portfolio Analytics
-- Risk distribution analysis
-- Default rate visualization
-- Performance metrics by loan categories
-- Historical trend analysis
-
-### 🎯 Machine Learning Models
-- **XGBoost**: Primary prediction model
-- **Random Forest**: Ensemble baseline
-- **Logistic Regression**: Interpretable benchmark
-- **SMOTE**: Handles class imbalance effectively
-
-### 📊 Interactive Dashboard
-- User-friendly Streamlit interface
-- Real-time risk calculations
-- Visual analytics and insights
-- Business impact analysis
-
-## 📁 Project Structure
+## Project Structure
 
 ```
-credit-risk-prediction/
-├── data/                    # Data files
-│   ├── raw/                # Original dataset
-│   ├── processed/          # Cleaned and processed data
-│   └── external/           # Additional reference data
-├── notebooks/              # Jupyter notebooks for analysis
-│   ├── 01_data_exploration.ipynb
-│   ├── 02_data_cleaning.ipynb
-│   ├── 03_feature_engineering.ipynb
-│   └── credit_risk_analysis.ipynb
-├── src/                    # Modular Python code
-│   └── credit_risk_model.py
-├── models/                 # Trained models
-│   ├── credit_risk_model_best.pkl
-│   └── feature_importance.csv
-├── dashboard/              # Streamlit application
-│   ├── app.py
-│   └── requirements.txt
-├── docs/                   # Technical documentation
-│   ├── 01_project_overview.md
-│   ├── 02_data_dictionary.md
-│   ├── 03_eda_report.md
-│   ├── 04_modeling_approach.md
-│   ├── 05_model_evaluation.md
-│   ├── 06_visualization_guide.md
-│   └── 07_deployment_guide.md
-├── reports/                # Final reports and presentations
-├── requirements.txt        # Python dependencies
-└── README.md              # Project documentation
+Rakamin-VIX-Intership-IDX/
+├── app.py                    # Main Streamlit application
+├── requirements.txt          # Python dependencies
+├── src/
+│   └── train_multi_models.py # Model training scripts
+├── dashboard/
+│   └── integrated_dashboard.py # Alternative dashboard implementation
+├── models/                   # Saved models and preprocessors
+├── notebooks/               # Jupyter notebooks for analysis
+└── README.md               # This file
 ```
 
-## 🛠️ Technology Stack
+## Features
 
-### Core Technologies
-- **Language**: Python 3.9+
-- **ML Libraries**: scikit-learn, XGBoost, LightGBM
-- **Data Processing**: pandas, numpy
-- **Visualization**: matplotlib, seaborn, plotly
+### Business Understanding
+- Defined credit risk problem statement
+- Identified key business metrics
+- Established success criteria
 
-### Dashboard Framework
-- **Frontend**: Streamlit (for simplicity and speed)
-- **Backend**: Python with ML models
-- **Deployment**: Streamlit Cloud/AWS/Azure
+### Data Science Pipeline
+- Data exploration and visualization
+- Data preprocessing and feature engineering
+- Model training with 5 algorithms
+- Model evaluation and comparison
 
-### Machine Learning
-- **Algorithms**: XGBoost, Random Forest, Logistic Regression
-- **Preprocessing**: StandardScaler, OneHotEncoder
-- **Imbalance Handling**: SMOTE, SMOTETomek
-- **Evaluation**: ROC-AUC, Precision, Recall, F1-Score
+### Algorithms Implemented
+1. **Logistic Regression**: Linear model with high interpretability
+2. **Random Forest**: Ensemble method with feature importance
+3. **XGBoost**: Gradient boosting with high performance
+4. **Support Vector Machine**: Effective for high-dimensional problems
+5. **Neural Network**: Deep learning for complex patterns
 
-## 📊 Model Performance
+### Interactive Dashboard
+- End-to-end navigation from business understanding to predictions
+- Real-time credit risk assessment
+- Model comparison and evaluation
+- Model registry and management
 
-Our best model (XGBoost) achieves outstanding performance:
+## Requirements
 
-| Metric | Score | Benchmark |
-|--------|-------|-----------|
-| **ROC-AUC** | 0.85+ | > 0.80 ✅ |
-| **Accuracy** | 0.80+ | > 0.75 ✅ |
-| **Precision** | 0.75+ | > 0.70 ✅ |
-| **Recall** | 0.70+ | > 0.65 ✅ |
-| **F1-Score** | 0.72+ | > 0.68 ✅ |
+- Python 3.8+
+- See `requirements.txt` for full list of dependencies
 
-### Business Impact
-- **Positive Financial Impact**: Optimizes lending decisions
-- **Risk Reduction**: Identifies high-risk applications effectively
-- **Improved Approval Process**: Automated decision-making for low-risk applications
+## Setup Instructions
 
-## 🚀 Quick Start
+1. Clone the repository
+2. Create a virtual environment:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
+3. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+4. Run the Streamlit app:
+   ```bash
+   streamlit run app.py
+   ```
 
-### Prerequisites
-- Python 3.9 or higher
-- pip package manager
-- Git
+## Navigation Guide
 
-### 1. Clone Repository
-```bash
-git clone https://github.com/rafsamjani/rakamin-vix-idx-credit-risk-prediction.git
-cd rakamin-vix-idx-credit-risk-prediction
-```
+The application has the following sections:
 
-### 2. Create Virtual Environment
-```bash
-# Run the setup script (recommended)
-python setup_environment.py
+- **Project Overview**: Business understanding and objectives
+- **Data Exploration**: Dataset analysis and visualization  
+- **Data Preprocessing**: Feature engineering and transformation
+- **Model Training**: Training interfaces for 5 ML algorithms
+- **Model Evaluation**: Performance metrics and comparison
+- **Predictions**: Real-time risk assessment
+- **Model Registry**: Model management and tracking
+- **About**: Project documentation
 
-# Or create manually
-python -m venv credit-risk-env
+## Data Preprocessing
 
-# Activate (Windows)
-credit-risk-env\Scripts\activate
+The system performs:
+- Categorical encoding using LabelEncoder
+- Numerical scaling using StandardScaler
+- Feature engineering (loan-to-income ratio, interest cost, etc.)
+- Train-test split with stratification
+- Handling of imbalanced data
 
-# Activate (Linux/Mac)
-source credit-risk-env/bin/activate
-```
+## Model Architecture
 
-### 3. Install Dependencies
-```bash
-pip install -r requirements.txt
-```
+Each model is trained on the same preprocessed dataset with the following characteristics:
 
-### 4. Run the Analysis
-```bash
-# Start Jupyter Notebook for data analysis
-jupyter notebook
+- **Logistic Regression**: L2 regularization, interpretable coefficients
+- **Random Forest**: 100 trees with depth control
+- **XGBoost**: 100 estimators with early stopping
+- **SVM**: RBF kernel with probability estimation
+- **Neural Network**: Two hidden layers with dropout
 
-# Open notebooks/01_data_exploration.ipynb to begin
-```
+## Business Impact
 
-### 5. Launch Dashboard
-```bash
-# Navigate to dashboard directory
-cd dashboard
+This system is designed to:
 
-# Install dashboard requirements
-pip install -r requirements.txt
+- **Reduce Financial Losses**: By identifying high-risk applicants
+- **Optimize Interest Rates**: Based on calculated risk scores
+- **Improve Approval Process**: Automation for low-risk applications
+- **Enhance Portfolio Management**: Through risk distribution analysis
+- **Assist Compliance**: By providing explainable predictions
 
-# Run Streamlit app
-streamlit run app.py
-```
+## Key Metrics
 
-### 6. Access the Dashboard
-Open your browser and navigate to: `http://localhost:8501`
+- **ROC-AUC**: Primary metric for model comparison
+- **Precision**: Proportion of predicted defaults that are actual defaults
+- **Recall**: Proportion of actual defaults correctly identified
+- **F1-Score**: Balance between precision and recall
 
-## 📊 Data Analysis Workflow
+## Deployment
 
-### Phase 1: Data Exploration (01_data_exploration.ipynb)
-- Load and understand the dataset structure
-- Analyze missing values and data quality issues
-- Explore target variable distribution
-- Initial insights and observations
+The system is designed for:
+- Real-time loan application assessment
+- Batch processing of applications
+- Model monitoring and management
+- Integration with existing lending platforms
 
-### Phase 2: Data Cleaning (02_data_cleaning.ipynb)
-- Filter completed loans (Fully Paid vs Charged Off)
-- Handle missing values with appropriate strategies
-- Convert data types (percentages, dates, currencies)
-- Create derived features
-- Handle outliers
+## Technical Specifications
 
-### Phase 3: Feature Engineering & Modeling (03_feature_engineering.ipynb)
-- Feature selection based on importance
-- Data preprocessing for ML models
-- Handle class imbalance with SMOTE
-- Train multiple algorithms
-- Hyperparameter tuning
-- Model evaluation and selection
+- **Frontend**: Streamlit for interactive dashboard
+- **ML Frameworks**: scikit-learn, XGBoost, TensorFlow
+- **Data Processing**: pandas, NumPy
+- **Visualization**: Plotly, Matplotlib, Seaborn
+- **Model Persistence**: Pickle for serialization
 
-### Phase 4: Deployment
-- Interactive Streamlit dashboard
-- Real-time risk assessment
-- Portfolio analytics
-- Business impact analysis
+## Getting Started
 
-## 🎯 Key Findings
+1. Train the models using the "Model Training" section in the dashboard
+2. Evaluate performance in the "Model Evaluation" section
+3. Use the "Predictions" section for real-time risk assessment
+4. Manage models in the "Model Registry" section
 
-### Top Risk Factors
-1. **FICO Score**: Strongest negative correlation with default
-2. **Debt-to-Income Ratio**: Higher DTI indicates higher risk
-3. **Employment Length**: Shorter employment history increases risk
-4. **Credit Utilization**: High revolving utilization is a red flag
-5. **Recent Delinquencies**: Past behavior predicts future defaults
+## License
 
-### Risk Profiles
-**Low Risk Borrower:**
-- FICO score: 750+
-- DTI ratio: < 15%
-- Employment: 5+ years
-- Home ownership: Mortgage or own
-
-**High Risk Borrower:**
-- FICO score: < 680
-- DTI ratio: > 30%
-- Employment: < 2 years
-- Recent delinquencies
-
-## 📈 Business Recommendations
-
-### Risk-Based Pricing
-- Implement tiered interest rates based on risk scores
-- Higher rates for high-risk applicants
-- Competitive rates for low-risk borrowers
-
-### Underwriting Guidelines
-- Minimum FICO score: 680 for standard loans
-- Maximum DTI ratio: 40%
-- Minimum employment: 6 months verified
-- Income verification required for all applications
-
-### Portfolio Management
-- Diversify by loan grade and purpose
-- Monitor concentration risk
-- Implement early warning systems
-- Regular portfolio performance review
-
-## 🤝 Contributing
-
-Contributions are welcome! Please follow these steps:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📝 Documentation
-
-Comprehensive documentation is available in the `/docs` folder:
-
-- [Project Overview](docs/01_project_overview.md)
-- [Data Dictionary](docs/02_data_dictionary.md)
-- [EDA Report](docs/03_eda_report.md)
-- [Modeling Approach](docs/04_modeling_approach.md)
-- [Model Evaluation](docs/05_model_evaluation.md)
-- [Visualization Guide](docs/06_visualization_guide.md)
-- [Deployment Guide](docs/07_deployment_guide.md)
-
-## 🏆 Achievements
-
-### Technical Excellence
-- ✅ Comprehensive data preprocessing pipeline
-- ✅ Advanced feature engineering
-- ✅ Multiple ML algorithms with hyperparameter tuning
-- ✅ Class imbalance handling
-- ✅ Model interpretability with SHAP values
-
-### Business Value
-- ✅ Positive financial impact projection
-- ✅ Actionable risk assessment tool
-- ✅ Automated decision support
-- ✅ Real-time risk evaluation
-- ✅ Portfolio analytics
-
-### Learning Outcomes
-- ✅ End-to-end ML project experience
-- ✅ Business acumen in credit risk
-- ✅ Data visualization and dashboarding
-- ✅ Model deployment considerations
-
-## 📞 Contact
-
-**Author**: Rafsamjani Anugrah
-**Email**: [your-email@example.com]
-**LinkedIn**: [linkedin.com/in/yourprofile]
-**GitHub**: [github.com/rafsamjani]
-
-## 📜 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- **Rakamin Academy** for the VIX Program opportunity
-- **ID/X Partners** for the business problem and mentorship
-- **Lending Club** for providing the dataset
-- **Open Source Community** for the amazing tools and libraries
-
----
-
-## 🚀 Deployment
-
-For production deployment instructions, see [Deployment Guide](docs/07_deployment_guide.md).
-
-### Cloud Deployment Options
-1. **Streamlit Cloud** (Easiest)
-2. **AWS EC2 + Streamlit**
-3. **Google Cloud Platform**
-4. **Azure App Service**
-5. **Docker + Kubernetes**
-
-### Monitoring and Maintenance
-- Model performance monitoring
-- Data drift detection
-- Automated retraining pipeline
-- A/B testing for model updates
-
----
-
-*Last Updated: December 2024*
-*Project Status: ✅ Complete*
-*Ready for Production: ✅ Yes*
+This project is created for educational purposes and demonstrates data science best practices.

@@ -1,0 +1,60 @@
+{
+  "models_created": {
+    "low_risk": true,
+    "medium_risk": true,
+    "high_risk": true
+  },
+  "preprocessing_steps": [
+    "1. Grade encoding (A=1, B=2, ..., G=7)",
+    "2. Employment length mapping to years",
+    "3. Home ownership encoding",
+    "4. Verification status encoding",
+    "5. Loan purpose encoding",
+    "6. Risk interaction features",
+    "7. Log transformations for skewed variables",
+    "8. Standard scaling for all features"
+  ],
+  "risk_formula": {
+    "base_score": 20,
+    "probability_weight": 60,
+    "dti_adjustments": {
+      "dti_30_40": "+10 points",
+      "dti_40_plus": "+20 points"
+    },
+    "grade_adjustments": {
+      "grade_E": "+15 points",
+      "grade_F": "+15 points",
+      "grade_G": "+25 points"
+    },
+    "employment_adjustments": {
+      "emp_lt_1_year": "+10 points",
+      "emp_1_5_years": "+5 points"
+    },
+    "loan_amount_adjustments": {
+      "loan_gt_30k": "+10 points"
+    }
+  },
+  "segment_performance": {
+    "low_risk": {
+      "default_rate": 0.09653493447027511,
+      "sample_count": 79277,
+      "avg_dti": 11.773189071231252,
+      "model_accuracy": 0.6507302827088342,
+      "model_roc_auc": 0.6507302827088342
+    },
+    "medium_risk": {
+      "default_rate": 0.25804529201430276,
+      "sample_count": 20136,
+      "avg_dti": 25.237560091378626,
+      "model_accuracy": 0.5896471212540302,
+      "model_roc_auc": 0.5896471212540302
+    },
+    "high_risk": {
+      "default_rate": 0.316727028400059,
+      "sample_count": 61021,
+      "avg_dti": 17.707667360416906,
+      "model_accuracy": 0.6258078288450352,
+      "model_roc_auc": 0.6258078288450352
+    }
+  }
+}
