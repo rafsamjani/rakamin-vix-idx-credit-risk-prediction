@@ -21,9 +21,11 @@ The primary business challenge is to develop an accurate credit risk assessment 
 
 ### Dataset Information
 - **Source**: Lending Club loan data (2007-2014)
-- **Format**: CSV file with borrower information and loan outcomes
-- **Size**: Historical loan data with multiple features
+- **Location**: `Dataset/raw/loan_data_2007_2014.csv` (240MB, ~870K rows)
+- **Data Dictionary**: `Dataset/LCDataDictionary.xlsx` (Complete feature definitions)
+- **Processed Data**: `Dataset/processed/` (Cleaned and engineered features)
 - **Target Variable**: Loan status (Fully Paid vs Charged Off)
+- **Key Features**: Loan amount, interest rate, FICO score, DTI, annual income, etc.
 
 ## Project Objectives
 
@@ -139,25 +141,61 @@ Build a machine learning model that predicts loan default probability with high 
 ## Project Structure
 
 ```
-credit-risk-prediction/
-├── data/                    # Data files (excluded from git)
-│   ├── raw/                # Original dataset
-│   ├── processed/          # Cleaned and processed data
-│   └── external/           # Additional reference data
-├── notebooks/              # Jupyter notebooks for analysis
-├── src/                    # Modular Python code
-├── models/                 # Trained model files
-├── reports/                # Final reports and presentations
-├── dashboard/              # Streamlit application
-├── docs/                   # Technical documentation
-├── requirements.txt        # Python dependencies
-└── README.md              # Project documentation
+Rakamin-VIX-Intership-IDX/
+├── Dataset/                # Data files (actual location)
+│   ├── raw/               # Original dataset
+│   │   └── loan_data_2007_2014.csv    # Main dataset (240MB)
+│   ├── processed/         # Cleaned and processed data
+│   └── LCDataDictionary.xlsx          # Data dictionary
+├── notebooks/             # Jupyter notebooks for analysis
+│   └── 05_end_to_end_credit_risk_prediction.ipynb
+├── src/                   # Modular Python code
+│   └── production_credit_risk_model.py
+├── models/                # Trained model files
+│   ├── credit_risk_model_v2.pkl
+│   └── neural_network_model.h5
+├── dashboard/             # Streamlit application
+│   ├── dashboard_v2.py
+│   └── main.py
+├── reports/               # Final reports and presentations
+├── docs/                  # Technical documentation
+│   └── 01_project_overview.md
+├── requirements.txt       # Python dependencies
+├── PROJECT_DOCUMENTATION.md
+├── INSTALLATION_GUIDE.md
+└── README.md             # Project documentation
 ```
+
+## Dataset Details
+
+### Main Dataset
+- **File**: `Dataset/raw/loan_data_2007_2014.csv`
+- **Size**: 240MB, approximately 870,000 rows
+- **Period**: 2007-2014 loan data
+- **Source**: Lending Club
+
+### Data Dictionary
+- **File**: `Dataset/LCDataDictionary.xlsx`
+- **Purpose**: Complete definition of all 75+ features
+- **Usage**: Feature selection and engineering reference
+
+### Key Features Available
+1. **Loan Information**: loan_amnt, funded_amnt, term, int_rate, installment
+2. **Borrower Information**: annual_inc, emp_length, home_ownership, purpose
+3. **Credit History**: fico_range_low, fico_range_high, dti, revol_util
+4. **Employment**: emp_length, verification_status
+5. **Geographic**: addr_state, zip_code
+
+### Target Variable
+- **Primary**: `loan_status` (Fully Paid, Charged Off, Current, Late, etc.)
+- **Binary**: `target` (0 = Fully Paid, 1 = Charged Off)
 
 ## Next Steps
 
-1. Set up development environment
-2. Load and explore the dataset
-3. Understand business requirements through data dictionary
-4. Begin exploratory data analysis
-5. Develop initial baseline models
+1. ✅ Set up development environment (venv + requirements)
+2. ✅ Load and explore the dataset (`Dataset/raw/loan_data_2007_2014.csv`)
+3. ✅ Understand business requirements through data dictionary (`Dataset/LCDataDictionary.xlsx`)
+4. ✅ Complete exploratory data analysis (in notebook)
+5. ✅ Develop machine learning and deep learning models
+6. 🔄 Build interactive dashboard (`dashboard/dashboard_v2.py`)
+7. 🔄 Finalize documentation and deployment

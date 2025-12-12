@@ -10,7 +10,10 @@
       "Bash(python:*)",
       "Bash(curl:*)",
       "Bash(jupyter nbconvert:*)",
-      "Bash(rm:*)"
+      "Bash(rm:*)",
+      "Bash(ls:*)",
+      "mcp__ide__getDiagnostics",
+      "mcp__ide__executeCode"
     ],
     "deny": [],
     "ask": []

@@ -1,0 +1,160 @@
+{
+  "grade": {
+    "classes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G"
+    ],
+    "mapping": {
+      "A": 0,
+      "B": 1,
+      "C": 2,
+      "D": 3,
+      "E": 4,
+      "F": 5,
+      "G": 6
+    }
+  },
+  "sub_grade": {
+    "classes": [
+      "A1",
+      "A2",
+      "A3",
+      "A4",
+      "A5",
+      "B1",
+      "B2",
+      "B3",
+      "B4",
+      "B5",
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "C5",
+      "D1",
+      "D2",
+      "D3",
+      "D4",
+      "D5",
+      "E1",
+      "E2",
+      "E3",
+      "E4",
+      "E5",
+      "F1",
+      "F2",
+      "F3",
+      "F4",
+      "F5",
+      "G1",
+      "G2",
+      "G3",
+      "G4",
+      "G5"
+    ],
+    "mapping": {
+      "A1": 0,
+      "A2": 1,
+      "A3": 2,
+      "A4": 3,
+      "A5": 4,
+      "B1": 5,
+      "B2": 6,
+      "B3": 7,
+      "B4": 8,
+      "B5": 9,
+      "C1": 10,
+      "C2": 11,
+      "C3": 12,
+      "C4": 13,
+      "C5": 14,
+      "D1": 15,
+      "D2": 16,
+      "D3": 17,
+      "D4": 18,
+      "D5": 19,
+      "E1": 20,
+      "E2": 21,
+      "E3": 22,
+      "E4": 23,
+      "E5": 24,
+      "F1": 25,
+      "F2": 26,
+      "F3": 27,
+      "F4": 28,
+      "F5": 29,
+      "G1": 30,
+      "G2": 31,
+      "G3": 32,
+      "G4": 33,
+      "G5": 34
+    }
+  },
+  "purpose": {
+    "classes": [
+      "car",
+      "credit_card",
+      "debt_consolidation",
+      "educational",
+      "home_improvement",
+      "house",
+      "major_purchase",
+      "medical",
+      "moving",
+      "other",
+      "renewable_energy",
+      "small_business",
+      "vacation",
+      "wedding"
+    ],
+    "mapping": {
+      "car": 0,
+      "credit_card": 1,
+      "debt_consolidation": 2,
+      "educational": 3,
+      "home_improvement": 4,
+      "house": 5,
+      "major_purchase": 6,
+      "medical": 7,
+      "moving": 8,
+      "other": 9,
+      "renewable_energy": 10,
+      "small_business": 11,
+      "vacation": 12,
+      "wedding": 13
+    }
+  },
+  "home_ownership": {
+    "classes": [
+      "MORTGAGE",
+      "NONE",
+      "OTHER",
+      "OWN",
+      "RENT"
+    ],
+    "mapping": {
+      "MORTGAGE": 0,
+      "NONE": 1,
+      "OTHER": 2,
+      "OWN": 3,
+      "RENT": 4
+    }
+  },
+  "verification_status": {
+    "classes": [
+      "Not Verified",
+      "Source Verified",
+      "Verified"
+    ],
+    "mapping": {
+      "Not Verified": 0,
+      "Source Verified": 1,
+      "Verified": 2
+    }
+  }
+}

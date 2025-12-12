@@ -1,0 +1,121 @@
+{
+  "training_date": "2025-12-12T09:44:05.534667",
+  "random_state": 42,
+  "best_model": "Neural Network",
+  "best_model_metrics": {
+    "Accuracy": 0.8138954904204442,
+    "Precision": 0.5551181102362205,
+    "Recall": 0.02213153351122273,
+    "F1-Score": 0.042566037735849056,
+    "ROC-AUC": 0.7065435625867501
+  },
+  "all_model_metrics": {
+    "validation": {
+      "Logistic Regression": {
+        "Accuracy": 0.6568898564368086,
+        "Precision": 0.30174023452087534,
+        "Recall": 0.6358199559332703,
+        "F1-Score": 0.4092589778655726,
+        "ROC-AUC": 0.705468204959196
+      },
+      "Random Forest": {
+        "Accuracy": 0.6662744175100024,
+        "Precision": 0.3052302888368462,
+        "Recall": 0.6153604028958136,
+        "F1-Score": 0.40805677311625965,
+        "ROC-AUC": 0.7039826788000618
+      },
+      "XGBoost": {
+        "Accuracy": 0.663832666509767,
+        "Precision": 0.30147922047428977,
+        "Recall": 0.6062322946175638,
+        "F1-Score": 0.4026971930374784,
+        "ROC-AUC": 0.6965541568344715
+      },
+      "Neural Network": {
+        "Accuracy": 0.8143092492351142,
+        "Precision": 0.5921052631578947,
+        "Recall": 0.021246458923512748,
+        "F1-Score": 0.04102096627164995,
+        "ROC-AUC": 0.7077123416476468
+      }
+    },
+    "test": {
+      "Logistic Regression": {
+        "Accuracy": 0.6557814746354488,
+        "Precision": 0.30151795631247685,
+        "Recall": 0.6391461309056663,
+        "F1-Score": 0.4097403904206078,
+        "ROC-AUC": 0.7048454620623256
+      },
+      "Random Forest": {
+        "Accuracy": 0.6638793533433089,
+        "Precision": 0.30488834318164376,
+        "Recall": 0.6236069690786376,
+        "F1-Score": 0.40954540768992886,
+        "ROC-AUC": 0.7047851855966865
+      },
+      "XGBoost": {
+        "Accuracy": 0.6655224011970777,
+        "Precision": 0.3046079726474474,
+        "Recall": 0.6152880238581071,
+        "F1-Score": 0.4074844074844075,
+        "ROC-AUC": 0.7001899745182686
+      },
+      "Neural Network": {
+        "Accuracy": 0.8138954904204442,
+        "Precision": 0.5551181102362205,
+        "Recall": 0.02213153351122273,
+        "F1-Score": 0.042566037735849056,
+        "ROC-AUC": 0.7065435625867501
+      }
+    }
+  },
+  "data_info": {
+    "train_samples": 159139,
+    "val_samples": 33992,
+    "test_samples": 34083,
+    "feature_count": 24,
+    "features": [
+      "loan_amnt",
+      "int_rate",
+      "installment",
+      "term_months",
+      "grade",
+      "sub_grade",
+      "purpose",
+      "annual_inc",
+      "emp_length_numeric",
+      "home_ownership",
+      "verification_status",
+      "dti",
+      "delinq_2yrs",
+      "inq_last_6mths",
+      "open_acc",
+      "pub_rec",
+      "revol_bal",
+      "revol_util",
+      "total_acc",
+      "loan_to_income",
+      "payment_to_income",
+      "high_utilization",
+      "has_delinquency",
+      "high_inquiries"
+    ]
+  },
+  "class_distribution": {
+    "train": {
+      "0": 129389,
+      "1": 29750
+    },
+    "val": {
+      "0": 27638,
+      "1": 6354
+    },
+    "test": {
+      "0": 27712,
+      "1": 6371
+    }
+  },
+  "imbalance_ratio": 4.349358446144791
+}

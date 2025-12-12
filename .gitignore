@@ -32,9 +32,9 @@ Thumbs.db
 *.log
 logs/
 
-# Jupyter checkpoints
-.ipynb_checkpoints/
 
 # Environment specific
 __pycache__/
 *.pyc
+
+.claude

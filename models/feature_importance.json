@@ -1,0 +1,296 @@
+{
+  "Random Forest": [
+    {
+      "feature": "int_rate",
+      "importance": 0.17412125472493797
+    },
+    {
+      "feature": "sub_grade",
+      "importance": 0.1633450815358111
+    },
+    {
+      "feature": "grade",
+      "importance": 0.11509517449101189
+    },
+    {
+      "feature": "loan_to_income",
+      "importance": 0.08906418191024619
+    },
+    {
+      "feature": "annual_inc",
+      "importance": 0.062345320252056136
+    },
+    {
+      "feature": "dti",
+      "importance": 0.060200706828604025
+    },
+    {
+      "feature": "payment_to_income",
+      "importance": 0.05969197697451611
+    },
+    {
+      "feature": "term_months",
+      "importance": 0.0501377286698426
+    },
+    {
+      "feature": "revol_util",
+      "importance": 0.036986660324649555
+    },
+    {
+      "feature": "installment",
+      "importance": 0.030080719136184455
+    },
+    {
+      "feature": "revol_bal",
+      "importance": 0.02946623034830625
+    },
+    {
+      "feature": "loan_amnt",
+      "importance": 0.02603766147193214
+    },
+    {
+      "feature": "total_acc",
+      "importance": 0.022302716936064747
+    },
+    {
+      "feature": "open_acc",
+      "importance": 0.016109703452982488
+    },
+    {
+      "feature": "purpose",
+      "importance": 0.013729966391523574
+    },
+    {
+      "feature": "inq_last_6mths",
+      "importance": 0.010271575556706727
+    },
+    {
+      "feature": "emp_length_numeric",
+      "importance": 0.010212406014712046
+    },
+    {
+      "feature": "verification_status",
+      "importance": 0.008264577447476018
+    },
+    {
+      "feature": "home_ownership",
+      "importance": 0.007685418685130146
+    },
+    {
+      "feature": "delinq_2yrs",
+      "importance": 0.004340390316642516
+    },
+    {
+      "feature": "pub_rec",
+      "importance": 0.0034307689295235825
+    },
+    {
+      "feature": "high_inquiries",
+      "importance": 0.0025211483862283444
+    },
+    {
+      "feature": "high_utilization",
+      "importance": 0.0024854690574138845
+    },
+    {
+      "feature": "has_delinquency",
+      "importance": 0.0020731621574975575
+    }
+  ],
+  "XGBoost": [
+    {
+      "feature": "int_rate",
+      "importance": 0.1872818022966385
+    },
+    {
+      "feature": "sub_grade",
+      "importance": 0.13986216485500336
+    },
+    {
+      "feature": "term_months",
+      "importance": 0.10322374850511551
+    },
+    {
+      "feature": "loan_to_income",
+      "importance": 0.06301331520080566
+    },
+    {
+      "feature": "annual_inc",
+      "importance": 0.04490382596850395
+    },
+    {
+      "feature": "home_ownership",
+      "importance": 0.036627039313316345
+    },
+    {
+      "feature": "purpose",
+      "importance": 0.036492969840765
+    },
+    {
+      "feature": "dti",
+      "importance": 0.03517870232462883
+    },
+    {
+      "feature": "payment_to_income",
+      "importance": 0.028080718591809273
+    },
+    {
+      "feature": "revol_bal",
+      "importance": 0.027918368577957153
+    },
+    {
+      "feature": "delinq_2yrs",
+      "importance": 0.027699502184987068
+    },
+    {
+      "feature": "inq_last_6mths",
+      "importance": 0.027667740359902382
+    },
+    {
+      "feature": "revol_util",
+      "importance": 0.027187062427401543
+    },
+    {
+      "feature": "installment",
+      "importance": 0.026867982000112534
+    },
+    {
+      "feature": "grade",
+      "importance": 0.026230866089463234
+    },
+    {
+      "feature": "emp_length_numeric",
+      "importance": 0.0256312508136034
+    },
+    {
+      "feature": "pub_rec",
+      "importance": 0.025533413514494896
+    },
+    {
+      "feature": "total_acc",
+      "importance": 0.02532799169421196
+    },
+    {
+      "feature": "loan_amnt",
+      "importance": 0.024229127913713455
+    },
+    {
+      "feature": "open_acc",
+      "importance": 0.023943250998854637
+    },
+    {
+      "feature": "verification_status",
+      "importance": 0.022016925737261772
+    },
+    {
+      "feature": "high_utilization",
+      "importance": 0.015082176774740219
+    },
+    {
+      "feature": "has_delinquency",
+      "importance": 0.0
+    },
+    {
+      "feature": "high_inquiries",
+      "importance": 0.0
+    }
+  ],
+  "Logistic Regression": [
+    {
+      "feature": "int_rate",
+      "importance": 0.4567669634683824
+    },
+    {
+      "feature": "loan_to_income",
+      "importance": 0.3722815121310193
+    },
+    {
+      "feature": "dti",
+      "importance": 0.16321798194486636
+    },
+    {
+      "feature": "total_acc",
+      "importance": 0.13610175571924638
+    },
+    {
+      "feature": "term_months",
+      "importance": 0.13427919192870502
+    },
+    {
+      "feature": "loan_amnt",
+      "importance": 0.12727169886978407
+    },
+    {
+      "feature": "open_acc",
+      "importance": 0.10108734962603506
+    },
+    {
+      "feature": "revol_util",
+      "importance": 0.10016001518444496
+    },
+    {
+      "feature": "inq_last_6mths",
+      "importance": 0.08144333610943044
+    },
+    {
+      "feature": "payment_to_income",
+      "importance": 0.05987644286058177
+    },
+    {
+      "feature": "delinq_2yrs",
+      "importance": 0.04518373327820278
+    },
+    {
+      "feature": "installment",
+      "importance": 0.04156785933204016
+    },
+    {
+      "feature": "home_ownership",
+      "importance": 0.03904981885527417
+    },
+    {
+      "feature": "purpose",
+      "importance": 0.03818260406058179
+    },
+    {
+      "feature": "revol_bal",
+      "importance": 0.017879699115394988
+    },
+    {
+      "feature": "annual_inc",
+      "importance": 0.01695258366368655
+    },
+    {
+      "feature": "high_utilization",
+      "importance": 0.014022704725967576
+    },
+    {
+      "feature": "verification_status",
+      "importance": 0.01374559320506651
+    },
+    {
+      "feature": "pub_rec",
+      "importance": 0.012110329328055652
+    },
+    {
+      "feature": "high_inquiries",
+      "importance": 0.010432017961975898
+    },
+    {
+      "feature": "emp_length_numeric",
+      "importance": 0.004063439653713796
+    },
+    {
+      "feature": "grade",
+      "importance": 0.0032483608526270966
+    },
+    {
+      "feature": "sub_grade",
+      "importance": 0.0024337211228355714
+    },
+    {
+      "feature": "has_delinquency",
+      "importance": 0.0005365382043014398
+    }
+  ]
+}

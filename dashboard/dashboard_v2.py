@@ -124,10 +124,8 @@ def check_data_connection():
 
     # Check for data files
     data_files = [
-        "data/processed/loan_data_cleaned.csv",
-        "data/raw/loan_data_2007_2014.csv",
         "Data/processed/loan_data_cleaned.csv",
-        "Data/loan_data_2007_2014.csv"
+        "Data/raw/loan_data_2007_2014.csv"
     ]
 
     connected = False
